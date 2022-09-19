@@ -2,6 +2,9 @@
   "editor.tabSize": 2,
   "cSpell.userWords": ["datetime", "contentful"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.wordWrap": "on",

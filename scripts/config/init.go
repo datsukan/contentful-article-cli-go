@@ -4,15 +4,24 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"regexp"
 
 	"github.com/joho/godotenv"
 )
 
+const projectDirName = "contentful-article-cli-go"
+
 // init はCLIの共通で行う初期化処理
 func init() {
-	err := godotenv.Load(".env")
+	projectName := regexp.MustCompile(`^(.*` + projectDirName + `)`)
+	currentWorkDirectory, _ := os.Getwd()
+	rootPath := projectName.Find([]byte(currentWorkDirectory))
+	envFilePath := string(rootPath) + `/.env`
+
+	err := godotenv.Load(envFilePath)
 	if err != nil {
-		fmt.Println("Load env error by initForShow.")
+		fmt.Println(err)
+		fmt.Println("Load env error.")
 		os.Exit(1)
 	}
 }
@@ -36,7 +45,7 @@ func LoadArticleDirEnv() (string, error) {
 	dirname := os.Getenv("ARTICLE_DIR")
 
 	if dirname == "" {
-		m := fmt.Sprintf("Environment variable not set. [ dirname: %v ]",dirname)
+		m := fmt.Sprintf("Environment variable not set. [ dirname: %v ]", dirname)
 		fmt.Println(m)
 		return "", errors.New(m)
 	}

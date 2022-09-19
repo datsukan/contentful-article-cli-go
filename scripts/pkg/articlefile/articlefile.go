@@ -41,7 +41,7 @@ func ArticleAttr(entry *contentful.Entry) (string, string, string, error) {
 }
 
 // AttrToFilename は指定された記事の主要な情報をファイル名に変換する
-func AttrToFilename(id string, title string, slug string) string {
+func AttrToFilename(id, title, slug string) string {
 	return fmt.Sprintf("%v--%v--%v.md", id, title, slug)
 }
 

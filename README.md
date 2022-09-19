@@ -86,3 +86,10 @@ Use "contentful-article-cli [command] --help" for more information about a comma
 
 - [rules](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
 - [manual](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint#configure)
+
+
+## Go test
+
+```sh
+go test ./...
+```
