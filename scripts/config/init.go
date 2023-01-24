@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-const projectDirName = "contentful-article-cli-go"
+const projectDirName = "datsukan-blog/contentful/article-cli-go"
 
 // init はCLIの共通で行う初期化処理
 func init() {
