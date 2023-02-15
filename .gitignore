@@ -2,3 +2,4 @@ node_modules/
 articles/
 .env*
 !.env.example
+contentful-article-cli
